@@ -96,3 +96,21 @@ function createImageGallery(images) {
 }
 
 createImageGallery(images);
+
+const listItems = document.querySelectorAll('.gallery-item');
+for (const listItem of listItems) {
+  listItem.style.width = 'calc((100% - 48px) / 3)';
+}
+
+const image = document.querySelectorAll('.gallery-image');
+for (const img of image) {
+  img.style.width = '360px';
+  img.style.height = '200px';
+  img.style.display = 'block';
+}
+
+export const gallery = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+  overlayOpacity: 0.5,
+});
